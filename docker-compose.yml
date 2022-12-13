@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: 'python main.py'
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+
+  test:
+    build: .
+    command: 'pytest'
+    volumes:
+      - .:/app
